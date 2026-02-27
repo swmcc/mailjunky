@@ -24,6 +24,7 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency "faraday", ">= 1.0", "< 3.0"
 
+  spec.add_development_dependency "mail", "~> 2.8"
   spec.add_development_dependency "rake", "~> 13.0"
   spec.add_development_dependency "rspec", "~> 3.12"
   spec.add_development_dependency "rubocop", "~> 1.50"
