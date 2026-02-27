@@ -1,0 +1,40 @@
+AllCops:
+  TargetRubyVersion: 3.0
+  NewCops: enable
+  SuggestExtensions: false
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+
+Style/Documentation:
+  Enabled: false
+
+Metrics/BlockLength:
+  Exclude:
+    - "spec/**/*"
+    - "*.gemspec"
+
+Metrics/MethodLength:
+  Exclude:
+    - "lib/mailjunky/connection.rb"
+
+Metrics/AbcSize:
+  Exclude:
+    - "lib/mailjunky/connection.rb"
+
+Metrics/CyclomaticComplexity:
+  Exclude:
+    - "lib/mailjunky/connection.rb"
+
+Metrics/PerceivedComplexity:
+  Exclude:
+    - "lib/mailjunky/connection.rb"
+
+Metrics/ParameterLists:
+  CountKeywordArgs: false
+
+Gemspec/DevelopmentDependencies:
+  Enabled: false
+
+Layout/LineLength:
+  Max: 120

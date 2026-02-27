@@ -1,0 +1,11 @@
+*.gem
+*.rbc
+.bundle
+.config
+coverage
+pkg
+spec/reports
+tmp
+.rspec_status
+Gemfile.lock
+.byebug_history
