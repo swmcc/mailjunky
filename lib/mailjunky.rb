@@ -6,6 +6,7 @@ require_relative "mailjunky/configuration"
 require_relative "mailjunky/connection"
 require_relative "mailjunky/resources/base"
 require_relative "mailjunky/resources/emails"
+require_relative "mailjunky/resources/events"
 require_relative "mailjunky/client"
 
 module MailJunky
