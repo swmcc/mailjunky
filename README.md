@@ -77,6 +77,16 @@ client.emails.send(
 )
 ```
 
+### Tracking events
+
+```ruby
+client.events.track(
+  event: "subscription_renewed",
+  user: "user@example.com",
+  properties: { plan: "pro", amount: 99 }
+)
+```
+
 ### Error handling
 
 ```ruby

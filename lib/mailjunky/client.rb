@@ -2,7 +2,7 @@
 
 module MailJunky
   class Client
-    attr_reader :emails
+    attr_reader :emails, :events
 
     def initialize(api_key: nil, base_url: nil, timeout: nil, open_timeout: nil)
       config = Configuration.new
@@ -14,6 +14,7 @@ module MailJunky
       connection = Connection.new(config)
 
       @emails = Resources::Emails.new(connection)
+      @events = Resources::Events.new(connection)
     end
   end
 end
