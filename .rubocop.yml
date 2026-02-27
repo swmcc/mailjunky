@@ -1,9 +1,12 @@
+require: []
+
 AllCops:
   TargetRubyVersion: 3.0
   NewCops: enable
   SuggestExtensions: false
   Exclude:
     - "gemfiles/**/*"
+    - "vendor/**/*"
 
 Style/StringLiterals:
   EnforcedStyle: double_quotes
