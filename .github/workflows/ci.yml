@@ -48,11 +48,11 @@ jobs:
           ruby-version: ${{ matrix.ruby }}
           bundler-cache: true
 
-      - name: Install Appraisal
-        run: bundle exec appraisal install
+      - name: Install dependencies for ${{ matrix.rails }}
+        run: bundle install --gemfile=gemfiles/${{ matrix.rails }}.gemfile
 
       - name: Run tests with ${{ matrix.rails }}
-        run: bundle exec appraisal ${{ matrix.rails }} rspec
+        run: BUNDLE_GEMFILE=gemfiles/${{ matrix.rails }}.gemfile bundle exec rspec
 
   lint:
     runs-on: ubuntu-latest
