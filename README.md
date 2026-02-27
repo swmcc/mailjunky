@@ -95,7 +95,7 @@ end
 
 ## Rails
 
-Works with Action Mailer out of the box. Tested on Rails 7.0, 7.1, 7.2, and 8.0.
+Works with Action Mailer out of the box. Tested on Rails 7.0, 7.1, 7.2, 8.0, and 8.1.
 
 ### Setup
 
