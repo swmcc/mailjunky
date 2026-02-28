@@ -1,0 +1,35 @@
+title: MailJunky Ruby SDK
+description: Ruby SDK for MailJunky - send emails, track events, manage contacts
+url: https://swmcc.github.io
+baseurl: /mailjunky
+
+theme: just-the-docs
+
+color_scheme: dark
+
+search_enabled: true
+search:
+  heading_level: 2
+  previews: 3
+
+aux_links:
+  GitHub: https://github.com/swmcc/mailjunky
+  # RubyGems: https://rubygems.org/gems/mailjunky  # TODO: Add once gem is published
+
+nav_external_links:
+  - title: MailJunky
+    url: https://mailjunky.ai
+  - title: Official API Docs
+    url: https://mailjunky.ai/docs
+
+footer_content: "MIT License"
+
+back_to_top: true
+back_to_top_text: "Back to top"
+
+sass:
+  quiet_deps: true
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
