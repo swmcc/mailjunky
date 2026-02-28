@@ -48,6 +48,26 @@ client.emails.send(
 )
 ```
 
+## With tags and metadata
+
+```ruby
+client.emails.send(
+  from: "hello@yourapp.com",
+  to: "user@example.com",
+  subject: "Order Confirmation",
+  html: "<p>Your order has been confirmed.</p>",
+  reply_to: "support@yourapp.com",
+  tags: [
+    { name: "campaign", value: "order_confirmation" },
+    { name: "type", value: "transactional" }
+  ],
+  metadata: {
+    order_id: "ord_12345",
+    user_id: "usr_67890"
+  }
+)
+```
+
 ## Batch sending
 
 Send multiple emails in a single request:

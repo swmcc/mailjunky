@@ -58,6 +58,20 @@ client.events.track(
 )
 ```
 
+### With session tracking
+
+```ruby
+client.events.track(
+  event: "cart_added",
+  user: "user@example.com",
+  session_id: "sess_abc123",
+  properties: {
+    product_id: "prod_456",
+    quantity: 2
+  }
+)
+```
+
 ### With timestamp
 
 ```ruby
