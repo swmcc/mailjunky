@@ -25,3 +25,5 @@ module MailJunky
     end
   end
 end
+
+require_relative "mailjunky/rails" if defined?(Rails)

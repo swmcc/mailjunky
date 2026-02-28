@@ -1,7 +1,12 @@
+require: []
+
 AllCops:
   TargetRubyVersion: 3.0
   NewCops: enable
   SuggestExtensions: false
+  Exclude:
+    - "gemfiles/**/*"
+    - "vendor/**/*"
 
 Style/StringLiterals:
   EnforcedStyle: double_quotes
@@ -17,18 +22,22 @@ Metrics/BlockLength:
 Metrics/MethodLength:
   Exclude:
     - "lib/mailjunky/connection.rb"
+    - "lib/mailjunky/rails/delivery_method.rb"
 
 Metrics/AbcSize:
   Exclude:
     - "lib/mailjunky/connection.rb"
+    - "lib/mailjunky/rails/delivery_method.rb"
 
 Metrics/CyclomaticComplexity:
   Exclude:
     - "lib/mailjunky/connection.rb"
+    - "lib/mailjunky/rails/delivery_method.rb"
 
 Metrics/PerceivedComplexity:
   Exclude:
     - "lib/mailjunky/connection.rb"
+    - "lib/mailjunky/rails/delivery_method.rb"
 
 Metrics/ParameterLists:
   CountKeywordArgs: false
