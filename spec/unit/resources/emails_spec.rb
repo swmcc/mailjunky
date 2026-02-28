@@ -39,6 +39,51 @@ RSpec.describe MailJunky::Resources::Emails do
       )
     end
 
+    it "includes reply_to when provided" do
+      expect(connection).to receive(:post).with(
+        "/api/v1/emails/send",
+        hash_including(reply_to: "support@example.com")
+      ).and_return({})
+
+      emails.send(
+        from: "sender@example.com",
+        to: "recipient@example.com",
+        subject: "Hello",
+        html: "<p>Hi</p>",
+        reply_to: "support@example.com"
+      )
+    end
+
+    it "includes tags when provided" do
+      expect(connection).to receive(:post).with(
+        "/api/v1/emails/send",
+        hash_including(tags: [{ name: "campaign", value: "welcome" }])
+      ).and_return({})
+
+      emails.send(
+        from: "sender@example.com",
+        to: "recipient@example.com",
+        subject: "Hello",
+        html: "<p>Hi</p>",
+        tags: [{ name: "campaign", value: "welcome" }]
+      )
+    end
+
+    it "includes metadata when provided" do
+      expect(connection).to receive(:post).with(
+        "/api/v1/emails/send",
+        hash_including(metadata: { user_id: "123", order_id: "456" })
+      ).and_return({})
+
+      emails.send(
+        from: "sender@example.com",
+        to: "recipient@example.com",
+        subject: "Hello",
+        html: "<p>Hi</p>",
+        metadata: { user_id: "123", order_id: "456" }
+      )
+    end
+
     it "excludes nil values from payload" do
       expect(connection).to receive(:post).with(
         "/api/v1/emails/send",
