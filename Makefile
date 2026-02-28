@@ -9,6 +9,7 @@ RESET := $(shell tput -Txterm sgr0)
 
 install: ## Install dependencies
 	bundle install
+	cd docs && bundle install
 
 console: ## Open IRB with gem loaded
 	bundle exec irb -r mailjunky
@@ -32,6 +33,11 @@ lint: ## Run RuboCop
 lint.fix: ## Run RuboCop with auto-fix
 	bundle exec rubocop -A
 
+# 📖 Docs
+
+docs: ## Run docs site locally
+	cd docs && bundle exec jekyll serve
+
 # 📦 Build
 
 build: ## Build the gem
@@ -53,4 +59,4 @@ help: ## Show all available make targets
 		| sort \
 		| awk 'BEGIN {FS = ":.*?## "}; {printf "  $(YELLOW)%-20s$(RESET) %s\n", $$1, $$2}'
 
-.PHONY: install console test test.unit test.integration lint lint.fix build clean check help
+.PHONY: install console test test.unit test.integration lint lint.fix docs build clean check help

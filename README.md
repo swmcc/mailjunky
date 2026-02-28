@@ -1,27 +1,27 @@
-# MailJunky Ruby
+# MailJunky Ruby SDK
 
-Ruby SDK for [MailJunky](https://mailjunky.ai).
+[![CI](https://github.com/swmcc/mailjunky/actions/workflows/ci.yml/badge.svg)](https://github.com/swmcc/mailjunky/actions/workflows/ci.yml)
+[![Ruby](https://img.shields.io/badge/ruby-3.0%2B-red)](https://www.ruby-lang.org)
+[![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
+
+Ruby SDK for [MailJunky](https://mailjunky.ai) - Email API with AI-Powered Workflows.
+
+[![MailJunky](docs/assets/images/mailjunky-hero.png)](https://mailjunky.ai)
+
+**[Documentation](https://swmcc.github.io/mailjunky)** | **[API Reference](https://mailjunky.ai/docs)** | **[Get API Key](https://mailjunky.ai)**
 
 ## Installation
 
-Add to your Gemfile:
-
 ```ruby
-gem "mailjunky"
+gem "mailjunky", git: "https://github.com/swmcc/mailjunky.git"
 ```
 
-Or install directly:
-
-```
-gem install mailjunky
-```
-
-## Usage
+## Quick Start
 
 ```ruby
 require "mailjunky"
 
-client = MailJunky::Client.new(api_key: "mj_live_...")
+client = MailJunky::Client.new(api_key: ENV["MAILJUNKY_API_KEY"])
 
 client.emails.send(
   from: "hello@yourapp.com",
@@ -31,93 +31,13 @@ client.emails.send(
 )
 ```
 
-### Configuration
+## Features
 
-Set a global API key:
+- **Emails** - Send transactional emails with full control
+- **Events** - Track user behaviour for AI-powered workflows
+- **Rails** - Action Mailer integration out of the box
 
-```ruby
-MailJunky.configure do |config|
-  config.api_key = ENV["MAILJUNKY_API_KEY"]
-end
-
-# Then create clients without passing the key
-client = MailJunky::Client.new
-```
-
-Or pass it per-client:
-
-```ruby
-client = MailJunky::Client.new(api_key: "mj_live_...")
-```
-
-### Sending emails
-
-Basic:
-
-```ruby
-client.emails.send(
-  from: "hello@yourapp.com",
-  to: "user@example.com",
-  subject: "Hello",
-  html: "<p>Hello there</p>"
-)
-```
-
-With options:
-
-```ruby
-client.emails.send(
-  from: "hello@yourapp.com",
-  to: ["user1@example.com", "user2@example.com"],
-  cc: "manager@example.com",
-  bcc: "records@yourapp.com",
-  subject: "Team update",
-  html: "<p>Here's what happened...</p>",
-  text: "Here's what happened..."
-)
-```
-
-### Tracking events
-
-```ruby
-client.events.track(
-  event: "subscription_renewed",
-  user: "user@example.com",
-  properties: { plan: "pro", amount: 99 }
-)
-```
-
-### Error handling
-
-```ruby
-begin
-  client.emails.send(...)
-rescue MailJunky::AuthenticationError
-  # Invalid API key
-rescue MailJunky::ValidationError => e
-  # Invalid params - check e.body for details
-rescue MailJunky::RateLimitError
-  # Slow down
-rescue MailJunky::APIError => e
-  # Something else - check e.status and e.message
-end
-```
-
-## Rails
-
-Works with Action Mailer out of the box. Tested on Rails 7.0, 7.1, 7.2, 8.0, and 8.1.
-
-### Setup
-
-```ruby
-# config/environments/production.rb
-config.action_mailer.delivery_method = :mailjunky
-config.action_mailer.mailjunky_settings = {
-  api_key: ENV["MAILJUNKY_API_KEY"]
-}
-```
-
-Or use Rails credentials:
+## Rails Integration
 
 ```ruby
 # config/environments/production.rb
@@ -127,24 +47,17 @@ config.action_mailer.mailjunky_settings = {
 }
 ```
 
-### Usage
+Your existing mailers just work. No changes needed.
 
-Your existing mailers just work:
+## Documentation
 
-```ruby
-class UserMailer < ApplicationMailer
-  def welcome(user)
-    @user = user
-    mail(to: user.email, subject: "Welcome!")
-  end
-end
+Full documentation available at **[swmcc.github.io/mailjunky](https://swmcc.github.io/mailjunky)**
 
-# Send it
-UserMailer.welcome(user).deliver_now
-UserMailer.welcome(user).deliver_later
-```
-
-That's it. No changes to your mailers needed.
+- [Getting Started](https://swmcc.github.io/mailjunky/getting-started.html)
+- [Sending Emails](https://swmcc.github.io/mailjunky/emails.html)
+- [Tracking Events](https://swmcc.github.io/mailjunky/events.html)
+- [Rails Integration](https://swmcc.github.io/mailjunky/rails.html)
+- [Error Handling](https://swmcc.github.io/mailjunky/errors.html)
 
 ## Development
 
@@ -152,7 +65,8 @@ That's it. No changes to your mailers needed.
 make install   # Install dependencies
 make test      # Run tests
 make lint      # Run RuboCop
-make check     # Run both
+make check     # Run all checks
+make docs      # Run docs site locally
 ```
 
 ## License
