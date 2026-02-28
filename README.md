@@ -8,7 +8,7 @@ Ruby SDK for [MailJunky](https://mailjunky.ai) - Email API with AI-Powered Workf
 
 [![MailJunky](docs/assets/images/mailjunky-hero.png)](https://mailjunky.ai)
 
-**[Documentation](https://swmcc.github.io/mailjunky)** | **[API Reference](https://mailjunky.ai/docs)** | **[Get API Key](https://mailjunky.ai)**
+**[Documentation](https://swmcc.github.io/mailjunky)** | **[API Reference](https://mailjunky.ai/api-reference)** | **[Get API Key](https://mailjunky.ai)**
 
 ## Installation
 

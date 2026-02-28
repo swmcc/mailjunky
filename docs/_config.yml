@@ -19,8 +19,8 @@ aux_links:
 nav_external_links:
   - title: MailJunky
     url: https://mailjunky.ai
-  - title: Official API Docs
-    url: https://mailjunky.ai/docs
+  - title: API Reference
+    url: https://mailjunky.ai/api-reference
 
 footer_content: "MIT License"
 
