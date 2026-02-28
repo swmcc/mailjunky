@@ -34,6 +34,7 @@ client.emails.send(
 ## Features
 
 - **Emails** - Send transactional emails with full control
+- **Contacts** - Manage contacts with tags and properties
 - **Events** - Track user behaviour for AI-powered workflows
 - **Rails** - Action Mailer integration out of the box
 
@@ -55,6 +56,7 @@ Full documentation available at **[swmcc.github.io/mailjunky](https://swmcc.gith
 
 - [Getting Started](https://swmcc.github.io/mailjunky/getting-started.html)
 - [Sending Emails](https://swmcc.github.io/mailjunky/emails.html)
+- [Managing Contacts](https://swmcc.github.io/mailjunky/contacts.html)
 - [Tracking Events](https://swmcc.github.io/mailjunky/events.html)
 - [Rails Integration](https://swmcc.github.io/mailjunky/rails.html)
 - [Error Handling](https://swmcc.github.io/mailjunky/errors.html)
