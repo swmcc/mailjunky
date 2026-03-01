@@ -5,7 +5,7 @@ require "bundler/setup"
 require "rails"
 require "action_mailer/railtie"
 require "mailjunky"
-require "mailjunky/rails"  # Explicitly load Rails integration after Rails is defined
+require "mailjunky/rails" # Explicitly load Rails integration after Rails is defined
 
 # Define a proper app class for Rails
 class TestMailjunkyApp < Rails::Application
